@@ -7,23 +7,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("hi")
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loadingPressed(_ sender: Any) {
+        let vc = LoadingViewController()
+        
+        self.presentViewControllerWithTransitionDown(vc, from: self)
+        
+//        // Present the view controller
+//        let newViewController = LoadingViewController() // Thay YourViewController bằng view controller của bạn
+//        newViewController.modalPresentationStyle = .overFullScreen
+//        self.present(newViewController, animated: true, completion: nil)
     }
-    */
-
+    
 }
