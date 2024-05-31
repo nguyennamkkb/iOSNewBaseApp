@@ -10,7 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController, UINavigationControllerDelegate {
     
-    //    let activityScreen = LoadingViewController()
+    let activityScreen = LoadingViewController()
+    let messageViewController = MessageViewController()
     var animation: Bool = true
     var statusBarType: UIStatusBarStyle = UIStatusBarStyle.default{
         didSet{
@@ -18,6 +19,23 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate {
             self.navigationController?.navigationBar.barStyle = .default
         }
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //        addBackButton()
+        statusBarType = .lightContent
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        activityScreen.modalPresentationStyle = .overCurrentContext
+        activityScreen.modalTransitionStyle = .crossDissolve        
+        
+        messageViewController.modalPresentationStyle = .overCurrentContext
+        messageViewController.modalTransitionStyle = .crossDissolve
+    
+    }
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
@@ -66,19 +84,7 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //        addBackButton()
-        statusBarType = .lightContent
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        //        activityScreen.modalPresentationStyle = .overCurrentContext
-        //        activityScreen.modalTransitionStyle = .crossDissolve
-        
-        
-    }
+
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -92,6 +98,34 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate {
         
         
     }
+    
+    // loading
+    func showLoading(){
+        print("showLoading")
+        present(activityScreen, animated: false, completion: nil)
+    }
+    func hideLoading(){
+        activityScreen.close()
+    }
+    
+    
+    // message
+    func showMessage(title: String, message: String){
+        print("showMessage")
+        messageViewController.bindData(title: title, message: message)
+        present(messageViewController, animated: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.messageViewController.close()
+        }
+    }
+    
+    func showAction(_ viewController: UIViewController) {
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        present(viewController, animated: false)
+    }
+    
     
 }
 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActionViewController" customModule="BaseApp" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAccept" destination="EHQ-9e-5M1" id="Scf-uJ-xoE"/>
+                <outlet property="btnCancel" destination="jK3-y5-zme" id="Qru-5g-FaL"/>
+                <outlet property="lbMessage" destination="qKf-i3-P96" id="tAD-Qs-Ve8"/>
+                <outlet property="lbTitle" destination="W3d-mI-UrV" id="pH7-eb-fAM"/>
+                <outlet property="vAction" destination="t59-m2-jlq" id="7Hw-th-VGu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t59-m2-jlq">
+                    <rect key="frame" x="20" y="338.66666666666669" width="353" height="200.00000000000006"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiêu đề" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3d-mI-UrV">
+                            <rect key="frame" x="10" y="10" width="333" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="97C-PU-1iK">
+                            <rect key="frame" x="10" y="146" width="333" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK3-y5-zme">
+                                    <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="44"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Huỷ"/>
+                                    <connections>
+                                        <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="Rjq-5M-zj0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHQ-9e-5M1">
+                                    <rect key="frame" x="171.66666666666663" y="0.0" width="161.33333333333337" height="44"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Chấp nhận"/>
+                                    <connections>
+                                        <action selector="acceptPressed:" destination="-1" eventType="touchUpInside" id="g4a-u2-GWT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="X4y-d9-flt"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Loi nhan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKf-i3-P96">
+                            <rect key="frame" x="10" y="44" width="333" height="92"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="W3d-mI-UrV" secondAttribute="trailing" constant="10" id="6mq-A4-0w3"/>
+                        <constraint firstAttribute="height" constant="200" id="BmB-DV-QhZ"/>
+                        <constraint firstAttribute="trailing" secondItem="qKf-i3-P96" secondAttribute="trailing" constant="10" id="G75-02-2FV"/>
+                        <constraint firstItem="W3d-mI-UrV" firstAttribute="leading" secondItem="t59-m2-jlq" secondAttribute="leading" constant="10" id="Irk-4a-Kf1"/>
+                        <constraint firstItem="qKf-i3-P96" firstAttribute="leading" secondItem="t59-m2-jlq" secondAttribute="leading" constant="10" id="baU-Nu-gx2"/>
+                        <constraint firstItem="97C-PU-1iK" firstAttribute="top" secondItem="qKf-i3-P96" secondAttribute="bottom" constant="10" id="cyo-5b-gdW"/>
+                        <constraint firstItem="97C-PU-1iK" firstAttribute="leading" secondItem="t59-m2-jlq" secondAttribute="leading" constant="10" id="egC-Ja-0uA"/>
+                        <constraint firstItem="W3d-mI-UrV" firstAttribute="top" secondItem="t59-m2-jlq" secondAttribute="top" constant="10" id="f6a-zl-C7Q"/>
+                        <constraint firstItem="qKf-i3-P96" firstAttribute="top" secondItem="W3d-mI-UrV" secondAttribute="bottom" constant="10" id="ftX-iA-qnV"/>
+                        <constraint firstAttribute="bottom" secondItem="97C-PU-1iK" secondAttribute="bottom" constant="10" id="s6n-om-AC0"/>
+                        <constraint firstAttribute="trailing" secondItem="97C-PU-1iK" secondAttribute="trailing" constant="10" id="w9S-B3-qob"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="7.3192312020843353e-05" blue="0.00014094716494850168" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="t59-m2-jlq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Axp-r9-cMa"/>
+                <constraint firstItem="t59-m2-jlq" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="MY1-FT-3vq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t59-m2-jlq" secondAttribute="trailing" constant="20" id="vXh-Te-w72"/>
+            </constraints>
+            <point key="canvasLocation" x="98" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
